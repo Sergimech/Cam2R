@@ -1,0 +1,158 @@
+<!-- Description of the Cam2R robot, a robotics webcam project for the UVic Robotics Master -->
+
+<robot
+  name="cam2r">
+  <!-- base_link is a fictitious link(frame) that is on the ground right below link1 origin, navigation stack depends on this frame -->
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-7.2795E-07 0.00010522 0.034999"
+        rpy="0 0 0" />
+      <mass
+        value="0.55942" />
+      <inertia
+        ixx="0.00057687"
+        ixy="5.7737E-10"
+        ixz="3.3005E-10"
+        iyy="0.0005789"
+        iyz="3.4351E-08"
+        izz="0.00069783" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cam2r/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 1 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cam2r/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Link1">
+    <inertial>
+      <origin
+        xyz="-7.2795E-07 0.00010522 0.034999"
+        rpy="0 0 0" />
+      <mass
+        value="0.55942" />
+      <inertia
+        ixx="0.00057687"
+        ixy="5.7737E-10"
+        ixz="3.3005E-10"
+        iyy="0.0005789"
+        iyz="3.4351E-08"
+        izz="0.00069783" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cam2r/meshes/Link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 1 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cam2r/meshes/Colision_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint1"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link2">
+    <inertial>
+      <origin
+        xyz="1.3251E-06 0.00010521 0.035001"
+        rpy="0 0 0" />
+      <mass
+        value="0.55942" />
+      <inertia
+        ixx="0.00057687"
+        ixy="-3.9051E-08"
+        ixz="1.2806E-10"
+        iyy="0.0005789"
+        iyz="-3.4759E-08"
+        izz="0.00069783" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cam2r/meshes/Link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cam2r/meshes/Colision_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint2"
+    type="continuous">
+    <origin
+      xyz="0 0.035 0.12"
+      rpy="1.5708 0 0" />
+    <parent
+      link="Link1" />
+    <child
+      link="Link2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

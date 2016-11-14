@@ -1,0 +1,8 @@
+prefix=/home/sergi/Cam2R_ws/install
+
+Name: cam2r
+Description: Description of cam2r
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/sergi/Cam2R_ws/install/lib 
+Requires: 
